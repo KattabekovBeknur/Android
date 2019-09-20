@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private double result;
     private double check;
     private double dot;
+    private double eq;
     enum Sign{
         PlUS,MINUS,MUL,DIV
     }
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPlus = findViewById(R.id.buttonPlus);
         buttonEqual = findViewById(R.id.buttonEqual);
         buttonC = findViewById(R.id.buttonC);
+        buttonBack = findViewById(R.id.buttonBack);
+        buttonBack.setOnClickListener(this);
         buttonC.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -98,69 +101,118 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.button1:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("1");
                 }
                 break;
             }
             case R.id.button2:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("2");
                 }
                 break;
             }
             case R.id.button3:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("3");
                 }
                 break;
             }
             case R.id.button4:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("4");
                 }
                 break;
             }
             case R.id.button5:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("5");
                 }
                 break;
             }
             case R.id.button6:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("6");
                 }
                 break;
             }
             case R.id.button7:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("7");
                 }
                 break;
             }
             case R.id.button8:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("8");
                 }
                 break;
             }
             case R.id.button9:{
                 if (check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("9");
                 }
                 break;
             }
             case R.id.button0:{
+                if(sign==Sign.DIV){
+//                    inputnumber.setText("");
+                    eq = 1;
+                    break;
+                }
                 if (inputnumber.length()>0 && check==1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append("0");
                 }
                 break;
             }
             case R.id.buttonDot:{
                 if (dot!=1) {
+                    if(inputnumber.getText().toString().equals("Wrong")){
+                        inputnumber.setText("");
+                    }
                     inputnumber.append(".");
                     dot = 1;
                 }
+                break;
+            }
+            case R.id.buttonBack:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                }
+                if (inputnumber.length()<1 || eq==1){
+                    break;
+                }
+
+                inputnumber.setText(inputnumber.getText().toString().substring(0, inputnumber.getText().toString().length() - 1));
                 break;
             }
             case R.id.buttonC:{
@@ -168,6 +220,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonPlus:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                }
+                if (inputnumber.length()<1 || eq==1){
+                    break;
+                }
                 if ( dot==1) {
                     inputnumber.append("0");
                 }
@@ -178,6 +236,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonMinus:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                }
+                if (inputnumber.length()<1 || eq==1){
+                    break;
+                }
                 if ( dot==1) {
                     inputnumber.append("0");
                 }
@@ -188,6 +252,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonMul:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                }
+                if (inputnumber.length()<1 || eq==1){
+                    break;
+                }
                 if ( dot==1) {
                     inputnumber.append("0");
                 }
@@ -198,6 +268,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonDiv:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                }
+                if (inputnumber.length()<1 || eq==1){
+                    break;
+                }
+                eq = 0;
                 if ( dot==1) {
                     inputnumber.append("0");
                 }
@@ -208,6 +285,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonSqr:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                }
+                if (inputnumber.length()<1 || eq==1){
+                    break;
+                }
                 dot=0;
                 number1 = Double.parseDouble(inputnumber.getText().toString());
                 number1 = number1*number1;
@@ -219,8 +302,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonSqrt:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                }
+                if (inputnumber.length()<1 || eq==1){
+                    break;
+                }
                 dot=0;
                 number1 = Double.parseDouble(inputnumber.getText().toString());
+                if (number1<0){
+                    inputnumber.setText("Wrong");
+                    break;
+                }
                 number1 = Math.sqrt(number1);
                 if((number1 == Math.floor(number1)) && !Double.isInfinite(number1)) {
                     inputnumber.setText(String.valueOf((int)(number1)));
@@ -230,11 +323,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonEqual:{
+                if(inputnumber.getText().toString().equals("Wrong")){
+                    inputnumber.setText("");
+                    break;
+                }
                 if ( dot==1) {
                     inputnumber.append("0");
                 }
                 dot=0;
+                if (inputnumber.length()<1 || eq==1){
+                    eq = 0;
+                    break;
+                }
+                eq = 0;
                 number2 = Double.parseDouble(inputnumber.getText().toString());
+
                 if (sign == Sign.PlUS){
                     result =  number1+number2;
                 }else if (sign == Sign.MINUS){
@@ -242,7 +345,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }else if (sign == Sign.MUL){
                     result = number1*number2;
                 }else if (sign == Sign.DIV){
-                    result = number1/number2;
+                    result = number1 / number2;
                 }
                 if((result == Math.floor(result)) && !Double.isInfinite(result)) {
                     inputnumber.setText(String.valueOf((int) result));
