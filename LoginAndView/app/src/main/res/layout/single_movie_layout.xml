@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:layout_margin="11dp"
+                android:textColor="@color/colorLight"
+                android:fontFamily="sans-serif-black"/>
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="341dp"
+                android:layout_height="220dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="34dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="11dp"
+                android:textAlignment="gravity"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="sans-serif-black"
+                android:text="Please wait..."
+                android:textColor="@color/colorLight"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="341dp"
+                android:layout_height="350dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="34dp"
+                tools:srcCompat="@tools:sample/avatars" />
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="11dp"
+                android:textAlignment="gravity"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/colorLight"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="11dp"
+                android:textAlignment="gravity"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/colorLight"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
